@@ -1,28 +1,28 @@
-import axios from 'axios'
-import React from 'react'
-import NewsCard from '../components/NewsCard'
+import axios from "axios";
+import React from "react";
+import NewsCard from "../components/NewsCard";
 
 export default function NewsDetails({ id, res }) {
-  console.log(res.data)
   return (
     <div>
-      {' '}
-      <div className=" gap-5 flex flex-col">
-        {res.data.map((e) => (
+      <div className="  flex flex-col">
+        {res.articles.map((e) => (
           <NewsCard e={e} />
         ))}
       </div>
     </div>
-  )
+  );
 }
 export async function getServerSideProps(context) {
-  const id = context.params.category
-  const res = await axios.get(`http://api.mediastack.com/v1/news?access_key=bf233d81708bafc03de7e806386325d2&sources=${id}`)
+  const id = context.params.category;
+  const res = await axios.get(
+    `https://newsapi.org/v2/top-headlines?category=${id}&apiKey=e3a25fa08cb84dcba582a695240cc8ce&language=en`
+  );
 
   return {
     props: {
       id,
       res: res.data,
     },
-  }
+  };
 }
