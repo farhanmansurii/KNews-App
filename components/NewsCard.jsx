@@ -2,7 +2,7 @@ import React from "react";
 
 export default function NewsCard({ e }) {
   return (
-    <div className=" mx-auto  flex-col flex  p-2 ">
+    <div className=" mx-auto  flex-col flex hover:scale-[101%] duration-150 p-2 ">
       <div>
         <img className=" aspect-video w-full rounded-3xl" src={e.urlToImage} />
       </div>
