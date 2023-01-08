@@ -9,12 +9,12 @@ const categories = [
   "sports",
   "technology",
 ];
-export default function Categories() {
+export default function Categories(id) {
   return (
-    <div className="grid gap-4  w-8/12 mx-auto grid-cols-3 ">
+    <div className="   lg:p-3 flex mx-auto gap-2  px-3 flex-wrap whitespace-normal ">
       {categories.map((category) => (
-        <div className="bg-green-900 px-4 py-2 capitalize   rounded-full text-white w-full mx-auto">
-          <Link href={`/${category}`}>{category}</Link>
+        <div className="border-[#1B9AAA] px-4  py-2 capitalize text-[#1B9AAA]  rounded-full  border-2  hover:bg-[#1B9AAA] hover:text-[#050401] duration-200  ">
+          <Link href={`/${category}`}>{category} </Link>
         </div>
       ))}
     </div>

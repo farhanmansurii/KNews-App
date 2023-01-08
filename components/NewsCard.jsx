@@ -2,16 +2,18 @@ import React from "react";
 
 export default function NewsCard({ e }) {
   return (
-    <div className=" mx-auto  w-full lg:w-[500px] flex-col flex  bg-gray-50 p-3">
+    <div className=" mx-auto  flex-col flex  p-2 ">
       <div>
-        <img className=" aspect-video w-full " src={e.urlToImage} />
+        <img className=" aspect-video w-full rounded-3xl" src={e.urlToImage} />
       </div>
-      <div className=" gap-2 flex  flex-col ">
-        <div className=" text-xs lg:text-sm bg-green-700 px-5 py-2 rounded-full text-white w-fit my-2 ">
+      <div className=" gap-2 flex  flex-col border-b-[1px] border-[#DDDBCB]/60 pb-6 rounded-xl ">
+        <div className=" text-xs text-[#050401] rounded-full  lg:text-sm bg-[#1B9AAA] px-5 py-2   w-fit my-3 ">
           {e.source.name}
         </div>
         <div className=" text-md font-semibold lg:text-md">{e.title}</div>
-        <div className=" text-xs lg:text-sm">{e.description}</div>
+        <div className=" text-xs break-all max-w-full  lg:text-sm font-merri font-light text-[#DDDBCB]/40">
+          {e.description}
+        </div>
 
         {/* <div className="flex gap-4">
           <img
